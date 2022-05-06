@@ -41,6 +41,26 @@ int deleteUser(User *u){
     printf("==> 삭제됨!\n");
     return 0;
 }
+void readUser(User *u, int count){
+    int num;
+    listUser(u, count);
+    printf("원하는 회원의 번호는? ");
+    scanf("%d", &num);
+    printf("\n%d %3s : %d시 %d분\n", num, u[num-1].name,u[num-1].s_time/100, u[num-1].s_time%100);
+    printf("\n******* 주문 내역 *******\n");
+    printf("김밥 : %d개\n", u[num-1].eat[0]);
+    printf("라면 : %d개\n", u[num-1].eat[1]);
+    printf("아메리카노 : %d개\n", u[num-1].eat[2]);
+    //이후에 calc 함수 call
+}
+void listUser(User *u, int count){
+    printf("No 회원 이름    시작 시간\n");
+    printf("===============================\n");
+    for(int i=0; i<count; i++){
+        if(u[i].s_time == -1)break;
+    printf("%d %s    %d : %d\n", i+1, u[i].name, u[i].s_time/100, u[i].s_time%100);
+    }
+} 
 void order(User *u){
     int m,c;
     printf("\n");
@@ -60,4 +80,18 @@ void order(User *u){
         if(flag==1) break;
     }
     printf("주문 완료!\n");
+}
+int calc(User *u,int e_time){
+    int t_time;//총 시간(분)
+    int t_bill=0;//시간 요금
+    int o_bill=0;//주문 요금
+    u->s_time=(u->s_time/100)*60+(u->s_time%100);
+    e_time=(e_time/100)*60+(e_time%100);
+    t_time=e_time-u->s_time;
+    if(t_time%30==0) t_bill=(t_time/30)*500;
+    else t_bill=(t_time/30 + 1)*500;
+    o_bill+=u->eat[0]*3000;
+    o_bill+=u->eat[1]*1500;
+    o_bill+=u->eat[2]*1500;
+    return t_bill + o_bill;
 }
