@@ -112,3 +112,13 @@ int calc(User *u,int e_time){
     o_bill+=u->eat[2]*1500;
     return t_bill + o_bill;
 }
+
+int selectDataNo(User *u,int count){
+    int no;
+    listUser(u,count);
+    printf("번호는 (취소:0)?");
+    scanf("%d",&no);
+    getchar();
+    return no;
+}
+
