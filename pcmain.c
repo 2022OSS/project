@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "pcmanage.h"
 
 int main(void){
