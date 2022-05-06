@@ -3,75 +3,72 @@
 
 int selectMenu(){
     int menu;
-    printf("\n*** ì ìˆ˜ê³„ì‚°ê¸° ***\n");
-    printf("1. ì¡°íšŒ\n");
-    printf("2. ì¶”ê°€\n");
-    printf("3. ìˆ˜ì •\n");
-    printf("4. ì‚­ì œ\n");
-    printf("5. íŒŒì¼ì €ì¥\n");
-    printf("6. ìŒì‹ ì£¼ë¬¸\n");
-    printf("7. íšŒì›ìƒì„¸ì¡°íšŒ\n");
-    printf("0. ì¢…ë£Œ\n\n");
-    printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
+    printf("\n*** Á¡¼ö°è»ê±â ***\n");
+    printf("1. Á¶È¸\n");
+    printf("2. Ãß°¡\n");
+    printf("3. ¼öÁ¤\n");
+    printf("4. »èÁ¦\n");
+    printf("5. ÆÄÀÏÀúÀå\n");
+    printf("6. À½½Ä ÁÖ¹®\n");
+    printf("7. È¸¿ø»ó¼¼Á¶È¸\n");
+    printf("0. Á¾·á\n\n");
+    printf("=> ¿øÇÏ´Â ¸Ş´º´Â? ");
     scanf("%d", &menu);
     return menu;
 }
 
 int createUser(User *u){
     printf("\n");
-    printf("ì‚¬ìš©ì ì´ë¦„ì€? ");
+    printf("»ç¿ëÀÚ ÀÌ¸§Àº? ");
     scanf("%s",u->name);
 
-    printf("ì‹œì‘ ì‹œê°„ì€?(ì˜ˆ:1330->13ì‹œ30ë¶„) ");
+    printf("½ÃÀÛ ½Ã°£Àº?(¿¹:1330->13½Ã30ºĞ) ");
     scanf("%d",&u->s_time);
 
     for(int i=0;i<3;i++) u->eat[i]=0;
 
-    printf("==> ì¶”ê°€ë¨\n"); 
     return 1;
 }
 int updateUser(User *u){
     printf("\n");
-    printf("ì‚¬ìš©ì ì´ë¦„ì€? ");
+    printf("»ç¿ëÀÚ ÀÌ¸§Àº? ");
     scanf("%s",u->name);
 
-    printf("ì‹œì‘ ì‹œê°„ì€?(ì˜ˆ:1330->13ì‹œ30ë¶„) ");
+    printf("½ÃÀÛ ½Ã°£Àº?(¿¹:1330->13½Ã30ºĞ) ");
     scanf("%d",&u->s_time);
 
-    printf("ê¹€ë°¥ ì£¼ë¬¸ ìˆ˜ëŸ‰ì€? ");
+    printf("±è¹ä ÁÖ¹® ¼ö·®Àº? ");
     scanf("%d",&u->eat[0]);
-    printf("ë¼ë©´ ì£¼ë¬¸ ìˆ˜ëŸ‰ì€? ");
+    printf("¶ó¸é ÁÖ¹® ¼ö·®Àº? ");
     scanf("%d",&u->eat[1]);
-    printf("ì•„ë©”ë¦¬ì¹´ë…¸ ì£¼ë¬¸ ìˆ˜ëŸ‰ì€? ");
+    printf("¾Æ¸Ş¸®Ä«³ë ÁÖ¹® ¼ö·®Àº? ");
     scanf("%d",&u->eat[2]);
 
-    printf("==> ìˆ˜ì •ë¨\n");
     return 1;
 }
 int deleteUser(User *u){
     int e_time,bill;    
-    printf("ì¢…ë£Œì‹œê°„ì€? ");
+    printf("Á¾·á½Ã°£Àº? ");
     scanf("%d",&e_time);
     bill=calc(u,e_time);
-    printf("%dì› ê²°ì œë¶€íƒë“œë¦½ë‹ˆë‹¤. ì•ˆë…•íˆ ê°€ì„¸ìš”!\n",bill);
+    printf("%d¿ø °áÁ¦ºÎÅ¹µå¸³´Ï´Ù. ¾È³çÈ÷ °¡¼¼¿ä!\n",bill);
     u->s_time=-1;
-    printf("==> ì‚­ì œë¨!\n");
     return 0;
 }
 void readUser(User *u, int count){
     int num;
     listUser(u, count);
-    printf("ì›í•˜ëŠ” íšŒì›ì˜ ë²ˆí˜¸ëŠ”? ");
+    printf("¿øÇÏ´Â È¸¿øÀÇ ¹øÈ£´Â? ");
     scanf("%d", &num);
-    printf("\n%d %3s : %dì‹œ %dë¶„\n", num, u[num-1].name,u[num-1].s_time/100, u[num-1].s_time%100);
-    printf("\n******* ì£¼ë¬¸ ë‚´ì—­ *******\n");
-    printf("ê¹€ë°¥ : %dê°œ\n", u[num-1].eat[0]);
-    printf("ë¼ë©´ : %dê°œ\n", u[num-1].eat[1]);
-    printf("ì•„ë©”ë¦¬ì¹´ë…¸ : %dê°œ\n", u[num-1].eat[2]);
-    //ì´í›„ì— calc í•¨ìˆ˜ call
+    printf("\n%d %3s : %d½Ã %dºĞ\n", num, u[num-1].name,u[num-1].s_time/100, u[num-1].s_time%100);
+    printf("\n******* ÁÖ¹® ³»¿ª *******\n");
+    printf("±è¹ä : %d°³\n", u[num-1].eat[0]);
+    printf("¶ó¸é : %d°³\n", u[num-1].eat[1]);
+    printf("¾Æ¸Ş¸®Ä«³ë : %d°³\n", u[num-1].eat[2]);
+    //ÀÌÈÄ¿¡ calc ÇÔ¼ö call
 }
 void listUser(User *u, int count){
-    printf("No íšŒì› ì´ë¦„    ì‹œì‘ ì‹œê°„\n");
+    printf("No È¸¿ø ÀÌ¸§    ½ÃÀÛ ½Ã°£\n");
     printf("===============================\n");
     for(int i=0; i<count; i++){
         if(u[i].s_time == -1)break;
@@ -81,27 +78,27 @@ void listUser(User *u, int count){
 void order(User *u){
     int m,c;
     printf("\n");
-    printf("*****ë©”ë‰´íŒ*****\n");
-    printf("[1]ê¹€ë°¥: 3000ì›\n");
-    printf("[2]ë¼ë©´: 1500ì›\n");
-    printf("[3]ì•„ë©”ë¦¬ì¹´ë…¸: 1500ì›\n");
+    printf("*****¸Ş´ºÆÇ*****\n");
+    printf("[1]±è¹ä: 3000¿ø\n");
+    printf("[2]¶ó¸é: 1500¿ø\n");
+    printf("[3]¾Æ¸Ş¸®Ä«³ë: 1500¿ø\n");
     while(1){
         int flag=1;
-        printf("ì£¼ë¬¸í•˜ì‹¤ ë©”ë‰´ë²ˆí˜¸ëŠ”? ");
+        printf("ÁÖ¹®ÇÏ½Ç ¸Ş´º¹øÈ£´Â? ");
         scanf("%d",&m);
-        printf("ìˆ˜ëŸ‰ì€? ");
+        printf("¼ö·®Àº? ");
         scanf("%d",&c);
         u->eat[m-1]+=c;
-        printf("ì£¼ë¬¸ì„ ëë‚´ì‹œê² ìŠµë‹ˆê¹Œ?(1:ì˜ˆ 2:ì¶”ê°€ ì£¼ë¬¸) ");
+        printf("ÁÖ¹®À» ³¡³»½Ã°Ú½À´Ï±î?(1:¿¹ 2:Ãß°¡ ÁÖ¹®) ");
         scanf("%d",&flag);
         if(flag==1) break;
     }
-    printf("ì£¼ë¬¸ ì™„ë£Œ!\n");
+    printf("ÁÖ¹® ¿Ï·á!\n");
 }
 int calc(User *u,int e_time){
-    int t_time;//ì´ ì‹œê°„(ë¶„)
-    int t_bill=0;//ì‹œê°„ ìš”ê¸ˆ
-    int o_bill=0;//ì£¼ë¬¸ ìš”ê¸ˆ
+    int t_time;//ÃÑ ½Ã°£(ºĞ)
+    int t_bill=0;//½Ã°£ ¿ä±İ
+    int o_bill=0;//ÁÖ¹® ¿ä±İ
     u->s_time=(u->s_time/100)*60+(u->s_time%100);
     e_time=(e_time/100)*60+(e_time%100);
     t_time=e_time-u->s_time;
@@ -116,7 +113,7 @@ int calc(User *u,int e_time){
 int selectDataNo(User *u,int count){
     int no;
     listUser(u,count);
-    printf("ë²ˆí˜¸ëŠ” (ì·¨ì†Œ:0)?");
+    printf("¹øÈ£´Â (Ãë¼Ò:0)?");
     scanf("%d",&no);
     getchar();
     return no;
