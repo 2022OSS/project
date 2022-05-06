@@ -31,3 +31,13 @@ int updateUser(User *u){
     printf("==> 수정됨\n");
     return 1;
 }
+int deleteUser(User *u){
+    int e_time,bill;    
+    printf("종료시간은? ");
+    scanf("%d",&e_time);
+    bill=calc(u,e_time);
+    printf("%d원 결제부탁드립니다. 안녕히 가세요!\n",bill);
+    u->s_time=-1;
+    printf("==> 삭제됨!\n");
+    return 0;
+}
