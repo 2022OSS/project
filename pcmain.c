@@ -17,23 +17,23 @@ int main(void){
         }
         else if (menu == 2){
             if(createUser(&u[count++]) == 1){
-            printf("ì¶”ê°€ë¨!\n");
+            printf("Ãß°¡µÊ!\n");
             }
             continue;
         }
         else if (menu == 3){
             int no = selectDataNo(u, count);
             if(no == 0){
-                printf("=>ì·¨ì†Œë¨!\n");
+                printf("=>Ãë¼ÒµÊ!\n");
                 continue;
             }
             if(updateUser(&u[no-1]) == 1)
-              printf("==> ìˆ˜ì •ë¨\n"); 
+              printf("==> ¼öÁ¤µÊ\n"); 
         }
         else if (menu == 4){
             int no = selectDataNo(u, count);
             if(no == 0){
-                printf("=>ì·¨ì†Œë¨!\n");
+                printf("=>Ãë¼ÒµÊ!\n");
                 continue;
             }
             if(deleteUser(&u[no-1]) == 0){
@@ -46,7 +46,7 @@ int main(void){
         else if(menu == 6){
         int no = selectDataNo(u, count);
             if(no == 0){
-                printf("=>ì·¨ì†Œë¨!\n");
+                printf("=>Ãë¼ÒµÊ!\n");
                 continue;
             }
             order(&u[no-1]);
@@ -58,6 +58,6 @@ int main(void){
         else if(menu == 7)
             readUser(u, count);
     }
-    printf("ì¢…ë£Œë¨!\n");
+    printf("Á¾·áµÊ!\n");
     return 0;
 }
