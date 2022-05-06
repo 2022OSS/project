@@ -1,5 +1,22 @@
 #include <stdio.h>
 #include "pcmanage.h"
+
+int selectMenu(){
+    int menu;
+    printf("\n*** 점수계산기 ***\n");
+    printf("1. 조회\n");
+    printf("2. 추가\n");
+    printf("3. 수정\n");
+    printf("4. 삭제\n");
+    printf("5. 파일저장\n");
+    printf("6. 음식 주문\n");
+    printf("7. 회원상세조회\n");
+    printf("0. 종료\n\n");
+    printf("=> 원하는 메뉴는? ");
+    scanf("%d", &menu);
+    return menu;
+}
+
 int createUser(User *u){
     printf("\n");
     printf("사용자 이름은? ");
