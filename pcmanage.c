@@ -61,3 +61,23 @@ void listUser(User *u, int count){
     printf("%d %s    %d : %d\n", i+1, u[i].name, u[i].s_time/100, u[i].s_time%100);
     }
 } 
+void order(User *u){
+    int m,c;
+    printf("\n");
+    printf("*****메뉴판*****\n");
+    printf("[1]김밥: 3000원\n");
+    printf("[2]라면: 1500원\n");
+    printf("[3]아메리카노: 1500원\n");
+    while(1){
+        int flag=1;
+        printf("주문하실 메뉴번호는? ");
+        scanf("%d",&m);
+        printf("수량은? ");
+        scanf("%d",&c);
+        u->eat[m-1]+=c;
+        printf("주문을 끝내시겠습니까?(1:예 2:추가 주문) ");
+        scanf("%d",&flag);
+        if(flag==1) break;
+    }
+    printf("주문 완료!\n");
+}
