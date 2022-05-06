@@ -81,3 +81,17 @@ void order(User *u){
     }
     printf("주문 완료!\n");
 }
+int calc(User *u,int e_time){
+    int t_time;//총 시간(분)
+    int t_bill=0;//시간 요금
+    int o_bill=0;//주문 요금
+    u->s_time=(u->s_time/100)*60+(u->s_time%100);
+    e_time=(e_time/100)*60+(e_time%100);
+    t_time=e_time-u->s_time;
+    if(t_time%30==0) t_bill=(t_time/30)*500;
+    else t_bill=(t_time/30 + 1)*500;
+    o_bill+=u->eat[0]*3000;
+    o_bill+=u->eat[1]*1500;
+    o_bill+=u->eat[2]*1500;
+    return t_bill + o_bill;
+}
