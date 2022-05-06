@@ -3,11 +3,12 @@ typedef struct{
 	int s_time;
 	int eat[3];
 } User;
+
 int createUser(User *u);
-void readUser(User *u,int count);
+void readUser(User *u, int count);
 int updateUser(User *u);
 int deleteUser(User *u);
-void order(User *u,int count);
+void order(User *u);
 int calc(User *u,int e_time);
 int selectMenu();
 int selectDataNo(User *u,int count);
