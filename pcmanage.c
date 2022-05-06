@@ -53,3 +53,11 @@ void readUser(User *u, int count){
     printf("아메리카노 : %d개\n", u[num-1].eat[2]);
     //이후에 calc 함수 call
 }
+void listUser(User *u, int count){
+    printf("No 회원 이름    시작 시간\n");
+    printf("===============================\n");
+    for(int i=0; i<count; i++){
+        if(u[i].s_time == -1)break;
+    printf("%d %s    %d : %d\n", i+1, u[i].name, u[i].s_time/100, u[i].s_time%100);
+    }
+} 
