@@ -3,6 +3,7 @@
 
 int main(void){
     int count = 0, menu;
+    int index=count;
     User u[20];
     // count = loadData(u);
     while (1){
@@ -16,7 +17,8 @@ int main(void){
             listUser(u, count);
         }
         else if (menu == 2){
-            if(createUser(&u[count++]) == 1){
+            if(createUser(&u[index++]) == 1){
+                count++;
             printf("Ãß°¡µÊ!\n");
             }
             continue;
