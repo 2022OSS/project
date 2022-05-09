@@ -14,7 +14,7 @@ int main(void){
                 continue;
             }
         if (menu == 1){
-            listUser(u, count);
+            listUser(u, index);
         }
         else if (menu == 2){
             if(createUser(&u[index++]) == 1){
@@ -24,7 +24,7 @@ int main(void){
             continue;
         }
         else if (menu == 3){
-            int no = selectDataNo(u, count);
+            int no = selectDataNo(u, index);
             if(no == 0){
                 printf("=>√Îº“µ !\n");
                 continue;
@@ -33,7 +33,7 @@ int main(void){
               printf("==> ºˆ¡§µ \n"); 
         }
         else if (menu == 4){
-            int no = selectDataNo(u, count);
+            int no = selectDataNo(u, index);
             if(no == 0){
                 printf("=>√Îº“µ !\n");
                 continue;
@@ -46,7 +46,7 @@ int main(void){
         //     saveFile(u, count);
         // }
         else if(menu == 6){
-        int no = selectDataNo(u, count);
+        int no = selectDataNo(u, index);
             if(no == 0){
                 printf("=>√Îº“µ !\n");
                 continue;
@@ -58,7 +58,7 @@ int main(void){
         // else if(menu == 8)
         //     searchCost(u, count);
         else if(menu == 7)
-            readUser(u, count);
+            readUser(u, index);
     }
     printf("¡æ∑·µ !\n");
     return 0;
