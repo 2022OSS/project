@@ -6,7 +6,6 @@ int main(void){
     int count, menu;
     count=loadData(u);
     int index=count;
-    // count = loadData(u);
     while (1){
         menu = selectMenu();
         if (menu == 0) break;
