@@ -67,6 +67,7 @@ void readUser(User *u, int count){
     printf("라면 : %d개\n", u[num-1].eat[1]);
     printf("아메리카노 : %d개\n", u[num-1].eat[2]);
     //이후에 calc 함수 call
+    printf("\n=> 총 주문금액 : %d원\n",u[num-1].eat[0] * 3000 + u[num-1].eat[1] * 1500 +u[num-1].eat[2]*1500);
 }
 void listUser(User *u, int count){
     printf("No 회원 이름    시작 시간\n");
