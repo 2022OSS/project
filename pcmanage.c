@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "pcmanage.h"
 
 int selectMenu(){
@@ -119,3 +120,31 @@ int selectDataNo(User *u,int count){
     return no;
 }
 
+int loadData(User *u){
+        int i=0;
+        FILE *fp;
+        fp=fopen("pcuser.txt","rt");
+        if(fp==NULL){
+                printf("No File\n");
+                return 0;
+        }
+        while(1){
+                fscanf(fp,"%d %d %d %d",&u[i].s_time,&u[i].eat[0],&u[i].eat[1],&u[i].eat[2]);
+                fgets(u[i].name,100,fp);
+                u[i].name[strlen(u[i].name)-1]='\0';
+                if(feof(fp)) break;
+                i++;
+        }
+        fclose(fp);
+        printf("Load Success\n");
+        return i;
+}
+void saveData(User *u,int index){
+        FILE *fp;
+        fp=fopen("pcuser.txt","wt");
+        for(int i=0;i<index;i++){
+                if(u[i].s_time==-1) continue;
+                fprintf(fp,"%d %d %d %d %s\n",u[i].s_time,u[i].eat[0],u[i].eat[1],u[i].eat[2],u[i].name);
+        }
+        fclose(fp);
+}

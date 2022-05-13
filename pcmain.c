@@ -2,9 +2,10 @@
 #include "pcmanage.h"
 
 int main(void){
-    int count = 0, menu;
-    int index=count;
     User u[20];
+    int count, menu;
+    count=loadData(u);
+    int index=count;
     // count = loadData(u);
     while (1){
         menu = selectMenu();
@@ -42,9 +43,10 @@ int main(void){
             count--;
         }
         }
-        // else if (menu == 5){
-        //     saveFile(u, count);
-        // }
+        else if (menu == 5){
+            saveData(u, index);
+            printf("=>ภ๚ภๅตส!\n");
+        }
         else if(menu == 6){
         int no = selectDataNo(u, index);
             if(no == 0){
@@ -53,10 +55,6 @@ int main(void){
             }
             order(&u[no-1]);
         }
-        // else if(menu == 7)
-        //     searchWay(u, count);
-        // else if(menu == 8)
-        //     searchCost(u, count);
         else if(menu == 7)
             readUser(u, index);
     }
