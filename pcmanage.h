@@ -4,14 +4,14 @@ typedef struct{
 	int eat[3];
 } User;
 
-nt selectMenu(); // ë©”ë‰´ ì„ íƒ
-int createUser(User *u); // ë°ì´í„° ìƒì„±
-void readUser(User *u, int count); // ë°ì´í„° ìƒì„¸ì¡°íšŒ
-int updateUser(User *u); // ë°ì´í„° ìˆ˜ì •
-int deleteUser(User *u); // ë°ì´í„° ì‚­ì œ
-void order(User *u); // ìŒì‹ ì£¼ë¬¸
-int calc(User *u,int e_time); // ì‚¬ìš©ì ì‹œì‘ ì‹œê°ê³¼ ì¢…ë£Œ ì‹œê°ì— ë”°ë¥¸ ë¹„ìš© ê³„ì‚°
-int selectDataNo(User *u,int count); // index ì…ë ¥ë°›ê¸°
-void listUser(User *u,int count); // ë°ì´í„° ì „ì²´ ì¡°íšŒ
-void saveData(User *u,int count); // ë°ì´í„° ì €ì¥
-int loadData(User *u); // ë°ì´í„° íŒŒì¼ ë¡œë“œ
+int selectMenu(); // ¸Ş´º ¼±ÅÃ
+int createUser(User *u); // µ¥ÀÌÅÍ »ı¼º
+void readUser(User *u, int count); // µ¥ÀÌÅÍ »ó¼¼Á¶È¸
+int updateUser(User *u); // µ¥ÀÌÅÍ ¼öÁ¤
+int deleteUser(User *u); // µ¥ÀÌÅÍ »èÁ¦
+void order(User *u); // À½½Ä ÁÖ¹®
+int calc(User *u,int e_time); // »ç¿ëÀÚ ½ÃÀÛ ½Ã°¢°ú Á¾·á ½Ã°¢¿¡ µû¸¥ ºñ¿ë °è»ê
+int selectDataNo(User *u,int count); // index ÀÔ·Â¹Ş±â
+void listUser(User *u,int count); // µ¥ÀÌÅÍ ÀüÃ¼ Á¶È¸
+void saveData(User *u,int count); // µ¥ÀÌÅÍ ÀúÀå
+int loadData(User *u); // µ¥ÀÌÅÍ ÆÄÀÏ ·Îµå
